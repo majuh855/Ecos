@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecos - Músicas Curtidas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/liked.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <h1>🎵 Ecos</h1>
+            </div>
+            
+            <nav class="nav-menu">
+                <ul>
+                    <li class="nav-item" onclick="goToMain()">
+                        <span class="nav-icon">🏠</span>
+                        <span>Home</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-icon">🔍</span>
+                        <span>Search</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-icon">📚</span>
+                        <span>Sua Biblioteca</span>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="recents">
+                <h3>Recentes ▼</h3>
+            </div>
+            
+            <div class="playlists">
+                <div class="playlist-item liked-songs active">
+                    <span class="playlist-icon">💜</span>
+                    <div class="playlist-info">
+                        <span class="playlist-name">Músicas curtidas</span>
+                        <span class="playlist-subtitle">Playlist</span>
+                        <span class="playlist-count" id="likedCount">150 músicas</span>
+                    </div>
+                </div>
+                
+                <div class="playlist-item">
+                    <div class="playlist-cover" style="background: linear-gradient(45deg, #ff6b6b, #4ecdc4);"></div>
+                    <div class="playlist-info">
+                        <span class="playlist-name">Come back home</span>
+                        <span class="playlist-subtitle">Playlist</span>
+                        <span class="playlist-count">gênero lo-fi</span>
+                    </div>
+                </div>
+                
+                <div class="playlist-item">
+                    <div class="playlist-cover" style="background: linear-gradient(45deg, #667eea, #764ba2);"></div>
+                    <div class="playlist-info">
+                        <span class="playlist-name">Mais do rock</span>
+                        <span class="playlist-subtitle">Playlist</span>
+                        <span class="playlist-count">gênero rock</span>
+                    </div>
+                </div>
+                
+                <div class="playlist-item">
+                    <div class="playlist-cover" style="background: linear-gradient(45deg, #f093fb, #f5576c);"></div>
+                    <div class="playlist-info">
+                        <span class="playlist-name">A chuva que cai</span>
+                        <span class="playlist-subtitle">Playlist</span>
+                        <span class="playlist-count">ambientalista</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="liked-header">
+                <div class="header-gradient">
+                    <div class="header-content">
+                        <div class="playlist-icon-large">💜</div>
+                        <div class="playlist-details">
+                            <span class="playlist-type">Playlist</span>
+                            <h1>Músicas Curtidas</h1>
+                            <div class="playlist-meta">
+                                <span id="songCount">0 músicas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="playlist-controls">
+                <button class="play-all-btn" id="playAllBtn">
+                    <span class="play-icon">▶️</span>
+                    Reproduzir playlist
+                </button>
+                <button class="shuffle-btn">
+                    <span class="shuffle-icon">🔀</span>
+                    Aleatório
+                </button>
+            </div>
+            
+            <div class="songs-table">
+                <div class="table-header">
+                    <div class="col-number">#</div>
+                    <div class="col-title">Título</div>
+                    <div class="col-duration">Duração</div>
+                    <div class="col-actions"></div>
+                </div>
+                
+                <div class="songs-list" id="likedSongsList">
+                    <!-- Músicas curtidas serão carregadas aqui via JavaScript -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Player -->
+        <div class="player">
+            <div class="player-left">
+                <div class="player-song-info">
+                    <div class="player-cover"></div>
+                    <div class="player-details">
+                        <span class="player-title">Selecione uma música</span>
+                        <span class="player-artist">-</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="player-center">
+                <div class="player-controls">
+                    <button class="control-btn">⏮️</button>
+                    <button class="control-btn play-btn" id="playBtn">▶️</button>
+                    <button class="control-btn">⏭️</button>
+                </div>
+                <div class="progress-bar">
+                    <span class="time">0:00</span>
+                    <div class="progress">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <span class="time">0:00</span>
+                </div>
+            </div>
+            
+            <div class="player-right">
+                <button class="control-btn">🔊</button>
+            </div>
+        </div>
+    </div>
+    
+    <audio id="audioPlayer" preload="metadata"></audio>
+    <script src="{{ url_for('static', filename='js/liked.js') }}"></script>
+</body>
+</html>
+
