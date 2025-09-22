@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecos - Página Principal</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <h1>🎵 Ecos</h1>
+            </div>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li class="nav-item active">
+                        <span class="nav-icon">🏠</span>
+                        <span>Home</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-icon">🔍</span>
+                        <span>Search</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-icon">📚</span>
+                        <span>Sua Biblioteca</span>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="recents">
+                <h3>Recentes ▼</h3>
+            </div>
+
+            <div class="playlists">
+                <div class="playlist-item liked-songs" onclick="goToLikedSongs()">
+                    <span class="playlist-icon">💜</span>
+                    <div class="playlist-info">
+                        <span class="playlist-name">Músicas curtidas</span>
+                        <span class="playlist-subtitle">Playlist</span>
+                        <span class="playlist-count">150 músicas</span>
+                    </div>
+                </div>
+
+                <div class="playlist-item">
+                    <div class="playlist-cover" style="background-image: url('/static/images/div1-1.png');"></div>
+                    <div class="playlist-info">
+                        <span class="playlist-name">Come back home</span>
+                        <span class="playlist-subtitle">Playlist</span>
+                        <span class="playlist-count">gênero lo-fi</span>
+                    </div>
+                </div>
+
+                <div class="playlist-item">
+                    <div class="playlist-cover" style="background-image: url('/static/images/div1-2.png');"></div>
+                    <div class="playlist-info">
+                        <span class="playlist-name">Mais do rock</span>
+                        <span class="playlist-subtitle">Playlist</span>
+                        <span class="playlist-count">gênero rock</span>
+                    </div>
+                </div>
+
+                <div class="playlist-item">
+                    <div class="playlist-cover" style="background-image: url('/static/images/div1-3.png');"></div>
+                    <div class="playlist-info">
+                        <span class="playlist-name">A chuva que cai</span>
+                        <span class="playlist-subtitle">ambientalista</span>
+                        <span class="playlist-count">ambientalista</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="greeting">
+                <h2>Bom dia!</h2>
+            </div>
+
+            <div class="quick-picks">
+                <div class="quick-pick-item">
+                    <div class="playlist-cover" style="background-image: url('/static/images/div1-1.png');"></div>
+                    <span>Come Back home</span>
+                </div>
+
+                <div class="quick-pick-item">
+                    <div class="playlist-cover" style="background-image: url('/static/images/div2a-2.png');"></div>
+                    <span>Life is better</span>
+                </div>
+
+                <div class="quick-pick-item">
+                    <div class="playlist-cover" style="background-image: url('/static/images/div2a-3.png');"></div>
+                    <span>Karaokê</span>
+                </div>
+
+                <div class="quick-pick-item">
+                    <div class="playlist-cover" style="background-image: url('/static/images/div2a-4.png');"></div>
+                    <span>Relaxing</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Porque você ouviu your eyes</h3>
+                <div class="music-section">
+                    <button class="scroll-btn left">⏪</button>
+
+                    <div class="music-grid" id="musicGrid">
+    <!-- As músicas serão inseridas aqui pelo main.js -->
+</div>
+
+
+                    <button class="scroll-btn right">⏩</button>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>🎵 Mais playlists</h3>
+                <div class="playlist-grid">
+                    <div class="playlist-card" onclick="tocarPlaylist('synthwave')">
+                        <div class="playlist-cover" style="background-image: url('/static/images/div2b-1.png');"></div>
+                        <h4>Synthwave Mix</h4>
+                        <p>Vibes dos anos 80</p>
+                    </div>
+
+                    <div class="playlist-card">
+                        <div class="playlist-cover" style="background-image: url('/static/images/div2b-2.png');"></div>
+                        <h4>Chill Vibes</h4>
+                        <p>Para relaxar</p>
+                    </div>
+
+                    <div class="playlist-card">
+                        <div class="playlist-cover" style="background-image: url('/static/images/div2b-3.png');"></div>
+                        <h4>Rock Classics</h4>
+                        <p>Os melhores do rock</p>
+                    </div>
+
+                    <div class="playlist-card">
+                        <div class="playlist-cover" style="background-image: url('/static/images/div2b-4.png');"></div>
+                        <h4>Rock Classics</h4>
+                        <p>Os melhores do rock</p>
+                    </div>
+
+                    <div class="playlist-card">
+                        <div class="playlist-cover" style="background-image: url('/static/images/div2b-5.png');"></div>
+                        <h4>Rock Classics</h4>
+                        <p>Os melhores do rock</p>
+                    </div>
+
+                    <div class="playlist-card">
+                        <div class="playlist-cover" style="background-image: url('/static/images/div2b-6.png');"></div>
+                        <h4>Rock Classics</h4>
+                        <p>Os melhores do rock</p>
+                    </div>
+
+                    <div class="playlist-card">
+                        <div class="playlist-cover" style="background-image: url('/static/images/div2b-7.png');"></div>
+                        <h4>Rock Classics</h4>
+                        <p>Os melhores do rock</p>
+                    </div>
+
+                    <div class="playlist-card">
+                        <div class="playlist-cover" style="background-image: url('/static/images/div2b-8.png');"></div>
+                        <h4>Rock Classics</h4>
+                        <p>Os melhores do rock</p>
+                    </div>
+
+                    <div class="playlist-card">
+                        <div class="playlist-cover" style="background-image: url('/static/images/div2b-9.png');"></div>
+                        <h4>Rock Classics</h4>
+                        <p>Os melhores do rock</p>
+                    </div>
+
+                    <div class="playlist-card">
+                        <div class="playlist-cover" style="background-image: url('/static/images/div2b-10.png');"></div>
+                        <h4>Rock Classics</h4>
+                        <p>Os melhores do rock</p>
+                    </div>
+
+                    <div class="playlist-card">
+                        <div class="playlist-cover" style="background-image: url('/static/images/div2b-11.png');"></div>
+                        <h4>Rock Classics</h4>
+                        <p>Os melhores do rock</p>
+                    </div>
+
+                    <div class="playlist-card">
+                        <div class="playlist-cover" style="background-image: url('/static/images/div2b-12.png');"></div>
+                        <h4>Rock Classics</h4>
+                        <p>Os melhores do rock</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="right-panel">
+            <div class="panel-header">
+                <span>Ouvindo</span>
+                <span class="close-btn">✕</span>
+            </div>
+
+            <div class="now-playing">
+                <div class="current-song-cover eye-cover" style="background-image: url('/static/images/div2b-13.png');">
+                </div>
+
+                <div class="song-info">
+                    <div class="song-title">Your eyes</div>
+                    <div class="song-artist">💜</div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <div class="controls">
+                    <span>🔀</span>
+                    <span class="btn-prev">⏮</span>
+                    <span id="playBtn" class="play-btn">▶</span>
+                    <span class="btn-next">⏭</span>
+                    <span>🔁</span>
+                </div>
+            </div>
+
+            <audio id="audioPlayer" preload="metadata"></audio>
+        </div>
+    </div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+
+</html>
